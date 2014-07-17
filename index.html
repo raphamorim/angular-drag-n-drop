@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Angular Drag'n Drop</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+
+		<!-- The main CSS file -->
+		<link href="style.css" rel="stylesheet" />
+
+		<!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<!-- Notice the controller directive -->
+	<body ng-controller="InlineEditorController">
+
+		<h1>Angular Drag'n Drop</h1>
+		<div class="content">
+			<div class="box">
+				<h2>Recipes<span>01</span></h2>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+				<div class="item"></div>
+
+			</div>
+			<div class="box">
+				<h2>Today Menu<span>02</span></h2>
+				<div class="item"></div>
+				<div class="item"></div>
+
+			</div>
+			<footer>
+				Created with so much love by
+				<a href="http://github.com/raphamorim">raphamorim</a>.
+			</footer>
+		</div>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
