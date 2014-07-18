@@ -1,0 +1,15 @@
+{
+  "name": "angular-drag-n-drop",
+  "version": "0.1.0",
+  "description": "Drag and Drop for AngularJS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphamorim/angular-drag-n-drop.git"
+  },
+  "author": "Raphael Amorim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raphamorim/angular-drag-n-drop/issues"
+  },
+  "homepage": "http://raphamorim.com/angular-drag-n-drop/"
+}
