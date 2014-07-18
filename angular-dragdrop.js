@@ -11,11 +11,12 @@ var app = angular.module("dragAndDrop", [])
 	}
 })
 
-.directive('dropItem', function() {
+.directive('dragItem', function() {
 	return {
 		link: function(scope, el) {
 			el.attr('ondragstart', 'drag(event)');
 			el.attr('draggable', 'true');
+			scope.items.push(el);
 		}
 	}
 });
@@ -23,8 +24,8 @@ var app = angular.module("dragAndDrop", [])
 // The controller
 
 function dragAndDropController($scope) {
-	$scope.items = ['one', 'two', 'three', 'four', 'five', 'six'];
 	$scope.dropped = [];
+	$scope.items = [];
 }
 
 // Independent functions
