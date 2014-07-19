@@ -2,22 +2,50 @@
 
 var app = angular.module("dragAndDrop", [])
 
-.directive('dropBox', function() {
-	return {
-		link: function(scope, el) {
-			el.attr('ondrop', "angular.element(document.querySelector('body')).scope().drop(event)");
-			el.attr('ondragover', "angular.element(document.querySelector('body')).scope().allowDrop(event)");
-		}
+.directive('droppable', function() {
+	return function(scope, element) {
+		var el = element[0];
+
+		el.addEventListener('drop', function(ev) {
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("Text");
+				var eid = document.getElementById(data);
+				ev.target.appendChild(eid);
+				scope.dropped.push(eid);
+
+				return false;
+			},
+			false
+		);
+
+		el.addEventListener('dragover', function(ev) {
+				ev.preventDefault();
+			},
+			false
+		);
 	}
 })
 
-.directive('dragItem', function() {
-	return {
-		link: function(scope, el) {
-			el.attr('ondragstart', "angular.element(document.querySelector('body')).scope().drag(event)");
-			el.attr('draggable', 'true');
-			scope.items.push(el);
-		}
+.directive('draggable', function() {
+	return function(scope, element) {
+		var el = element[0];
+
+		el.draggable = true;
+
+		el.addEventListener('dragstart', function(e) {
+				e.dataTransfer.setData("Text", e.target.id);
+				this.classList.add('drag');
+			},
+			false
+		);
+
+		el.addEventListener('dragend', function(e) {
+				this.classList.remove('drag');
+			},
+			false
+		);
+
+		scope.items.push(el);
 	}
 });
 
@@ -26,23 +54,4 @@ var app = angular.module("dragAndDrop", [])
 function dragAndDropController($scope) {
 	$scope.dropped = [];
 	$scope.items = [];
-
-	// Drag and Drop functions
-
-	$scope.allowDrop = function(ev){
-		ev.preventDefault();
-    };
-
-	$scope.drag = function(ev) {
-		ev.dataTransfer.setData("Text", ev.target.id);
-	};
-
-	$scope.drop = function(ev) {
-		ev.preventDefault();
-		var data = ev.dataTransfer.getData("Text");
-		var el = document.getElementById(data);
-		ev.target.appendChild(el);
-		$scope.dropped.push(el);
-	};
 }
-
