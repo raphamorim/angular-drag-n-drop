@@ -22,36 +22,39 @@
 
 	<!-- Notice the controller directive -->
 	<body ng-app="dragAndDrop" ng-controller="dragAndDropController">
-
+		<div class="social">
+		 	<iframe src="http://ghbtns.com/github-btn.html?user=raphamorim&repo=angular-drag-n-drop&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="140" height="30"></iframe>
+		</div>
 		<h1>Angular Drag'n Drop</h1>
 		<div class="content">
 			<div class="box">
 				<h2>Recipes<span>{{ items.length }}</span></h2>
-				<div drag-item id="one" class="item">
+				<div draggable id="one" class="item">
 					<p>Pancakes</p>
 				</div>
-				<div drag-item id="two" class="item">
+				<div draggable id="two" class="item">
 					<p>Pasta</p>
 				</div>
-				<div drag-item id="three" class="item">
+				<div draggable id="three" class="item">
 					<p>Risotto</p>
 				</div>
-				<div drag-item id="four" class="item">
+				<div draggable id="four" class="item">
 					<p>Strogonoff</p>
 				</div>
-				<div drag-item id="five" class="item">
+				<div draggable id="five" class="item">
 					<p>Salad</p>
 				</div>
-				<div drag-item id="six" class="item">
+				<div draggable id="six" class="item">
 					<p>Petit Gateau</p>
 				</div>
 
 			</div>
-			<div drop-box class="box">
+			<div droppable class="box">
 				<h2>Today Menu<span>{{ dropped.length }}</span></h2>
 				<div ng-repeat="item in dropped" class="item" id="{{ item }}"></div>
-
 			</div>
+			<h1>Guide</h1>
+			<p>Not Available yet.</p>
 			<footer>
 				Created with so much love by
 				<a href="http://github.com/raphamorim">raphamorim</a>.
