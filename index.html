@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8"/>
 		<title>Angular Drag'n Drop</title>
 
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
 
 		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+		<!-- Meta -->
+		<meta charset="utf-8"/>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="description" content="Angular Drag'n Drop uses native HTML5 Drag and Drop, using few directives to control this feature, with no dependency on Jquery." />
 
 		<!-- The main CSS file -->
 		<link href="style.css" rel="stylesheet" />
@@ -23,12 +27,24 @@
 		<div class="content">
 			<div class="box">
 				<h2>Recipes<span>{{ items.length }}</span></h2>
-				<div drag-item id="one" class="item"></div>
-				<div drag-item id="two" class="item"></div>
-				<div drag-item id="three" class="item"></div>
-				<div drag-item id="four" class="item"></div>
-				<div drag-item id="five" class="item"></div>
-				<div drag-item id="six" class="item"></div>
+				<div drag-item id="one" class="item">
+					<p>Pancakes</p>
+				</div>
+				<div drag-item id="two" class="item">
+					<p>Pasta</p>
+				</div>
+				<div drag-item id="three" class="item">
+					<p>Risotto</p>
+				</div>
+				<div drag-item id="four" class="item">
+					<p>Strogonoff</p>
+				</div>
+				<div drag-item id="five" class="item">
+					<p>Salad</p>
+				</div>
+				<div drag-item id="six" class="item">
+					<p>Petit Gateau</p>
+				</div>
 
 			</div>
 			<div drop-box class="box">
