@@ -45,13 +45,13 @@ var app = angular.module("dragAndDrop", [])
 			false
 		);
 
-		scope.items.push(el);
+		scope.dragged.push(el);
 	}
 });
 
 // The controller
 
 function dragAndDropController($scope) {
+	$scope.dragged = [];
 	$scope.dropped = [];
-	$scope.items = [];
 }
