@@ -74,10 +74,10 @@ h1 {
 	width: 170px;
 	height: 150px;
 	margin: 10px;
-	cursor: pointer;
 	float: left;
 	position: relative;
 	border-bottom: 3px solid rgba(0,0,0,.5);
+	cursor: move;
 }
 
 .box .item>p {
