@@ -11,7 +11,10 @@ var app = angular.module("dragAndDrop", [])
                 var data = e.dataTransfer.getData("Text");
                 var element = document.getElementById(data);
                 e.target.appendChild(element);
-                scope.dropped.push(element);
+                scope.dropList.push(element);
+
+                var index = scope.dragList.indexOf(element);
+                scope.dragList.splice(index, 1);
 
                 return false;
             },
@@ -45,13 +48,13 @@ var app = angular.module("dragAndDrop", [])
             false
         );
 
-        scope.dragged.push(el);
+        scope.dragList.push(el);
     }
 });
 
 // The controller
 
 function dragAndDropController($scope) {
-    $scope.dragged = [];
-    $scope.dropped = [];
+    $scope.dragList = [];
+    $scope.dropList = [];
 }
