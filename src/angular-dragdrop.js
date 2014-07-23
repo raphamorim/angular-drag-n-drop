@@ -35,6 +35,8 @@ var app = angular.module("dragAndDrop", [])
 
         el.draggable = true;
 
+        if (!el.id) el.id = Math.floor((Math.random() * 100000) + 1);
+
         el.addEventListener('dragstart', function(e) {
                 e.dataTransfer.setData("Text", e.target.id);
                 this.classList.add('drag');
