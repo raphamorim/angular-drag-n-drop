@@ -1,18 +1,20 @@
 {
   "name": "angular-drag-n-drop",
-  "version": "0.10",
+  "version": "0.1.0",
   "homepage": "https://github.com/raphamorim/angular-drag-n-drop",
   "authors": [
     "Raphael Amorim <rapha850@gmail.com>"
   ],
   "description": "Drag and Drop for AngularJS",
-  "main": "src/angular-dragdrop.min.js",
+  "main": "angular-dragdrop.js",
   "license": "MIT",
   "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "Gruntfile.js",
+    "package.json",
     "test",
     "tests"
     ],

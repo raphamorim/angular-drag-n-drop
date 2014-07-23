@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             },
             main: {
                 files: {
-                    "src/angular-dragdrop.min.js": [
+                    "angular-dragdrop.js": [
                         "src/angular-dragdrop.js"
                     ]
                 }
