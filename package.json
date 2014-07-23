@@ -1,7 +1,7 @@
 {
   "name": "angular-drag-n-drop",
-  "version": "0.1.1",
-  "description": "Drag and Drop for AngularJS",
+  "version": "0.1.2",
+  "description": "Angular Drag'n Drop uses native HTML5 Drag and Drop, using few directives to control this feature, with no dependency on Jquery",
   "repository": {
     "type": "git",
     "url": "https://github.com/raphamorim/angular-drag-n-drop.git"
