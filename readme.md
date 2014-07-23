@@ -3,6 +3,8 @@
 
 [See how it works!](http://raphamorim.com/angular-drag-n-drop/)
 
+![Example](https://raw.githubusercontent.com/raphamorim/angular-drag-n-drop/gh-pages/assets/images/example.png)
+
 ## Basic Usage
 Not available yet.
 
