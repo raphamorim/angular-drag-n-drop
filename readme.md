@@ -16,4 +16,6 @@ Not available yet.
 
 ## About
 
-**License:** MIT ® [Raphael Amorim](https://github.com/raphamorim).
+**License:** MIT
+
+**Created by** [Raphael Amorim](https://github.com/raphamorim)
