@@ -3,7 +3,7 @@
 
 ![Example](https://raw.githubusercontent.com/raphamorim/angular-drag-n-drop/gh-pages/assets/images/example.png)
 
-See the documentation: [how it works!](http://raphamorim.com/angular-drag-n-drop/)
+See the documentation: [how it works!](http://raphamorim.com/angular-drag-n-drop/#guide)
 
 ## Basic Usage
 
@@ -11,20 +11,20 @@ See the documentation: [how it works!](http://raphamorim.com/angular-drag-n-drop
 
     $ bower install angular-drag-n-drop
 
-**[ 2 ]** Add the source on tag body end:
+**[ 2 ]** Add the source before body tag end:
 
     <script src="angular-dragdrop.min.js"></script>
 
-**[ 3 ]** Start the app and controller in any element:
+**[ 3 ]** Start the Drag'n Drop in any element:
 
     <div ng-app="dragAndDrop" ng-controller="dragAndDropController">
 
-**[ 4 ]** For each element with drag property, use **draggable** directive:
+**[ 4 ]** For each element allow dragging property, use **draggable** directive:
 
     <p draggable>Indiana Jones</p>
-    <p draggable>Obi Wan Kenobi</p>
+    <div draggable>Obi Wan Kenobi</div>
 
-**[ 5 ]** For each element with drop allow, use **droppable** directive:
+**[ 5 ]** For allow drop in any element, use **droppable** directive:
 
     <div class="box" droppable></div>
 
