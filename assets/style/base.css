@@ -53,10 +53,13 @@ h3 {
 	margin: 0px auto;
 }
 
-.social {
+.github {
 	position: absolute;
 	right: 0;
-	margin: 20px;
+}
+
+.github img {
+	height: 180px;
 }
 
 .box {
