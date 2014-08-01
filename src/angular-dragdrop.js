@@ -2,14 +2,20 @@
 
 var app = angular.module("dragAndDrop", [])
 
-// Application Directives
+/*
+    App Directives
+*/
 
 .directive('droppable', function() {
     return function(scope, element) {
-        var el = element[0];
+        var el = element[0],
+            droppable = scope.droppable;
+
+        // If element don't have any id, create random id
+        if (!el.id) el.id = Math.floor((Math.random() * 100000) + 1);
 
         // Add element to droppable list
-        scope.droppable.push(el);
+        droppable.push(el);
 
         // Apply prototype to list dropped items
         el.droppedItems = [];
@@ -17,10 +23,13 @@ var app = angular.module("dragAndDrop", [])
         // Event to drop action on droppable element
         el.addEventListener('drop', function(e) {
                 e.preventDefault();
+
                 var data = e.dataTransfer.getData("Text");
                 var element = document.getElementById(data);
-                e.target.appendChild(element);
+                var box = document.getElementById(this.id);
+                box.appendChild(element);
 
+                // Remove element from dragList
                 var index = scope.dragList.indexOf(element);
                 scope.dragList.splice(index, 1);
 
@@ -40,7 +49,8 @@ var app = angular.module("dragAndDrop", [])
 
 .directive('draggable', function() {
     return function(scope, element) {
-        var el = element[0];
+        var el = element[0],
+            dragList = scope.dragList;
 
         // Apply draggable property on element
         el.draggable = true;
@@ -68,11 +78,13 @@ var app = angular.module("dragAndDrop", [])
         );
 
         // Add this element on dragList
-        scope.dragList.push(el);
+        dragList.push(el);
     }
 });
 
-// Application Controller
+/*
+    App Controller
+*/
 
 function dragAndDropController($scope) {
     /*
