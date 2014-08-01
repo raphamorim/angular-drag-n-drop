@@ -7,7 +7,7 @@ See the documentation: [how it works!](http://raphamorim.com/angular-drag-n-drop
 
 ## Basic Usage
 
-**[ 1 ]** Get Angular Drag'n Drop using download option or via bower. To get using [Bower](http://bower.io/) just run this command:
+**[ 1 ]** Get Angular Drag'n Drop using [Download Option](https://github.com/raphamorim/angular-drag-n-drop/archive/master.zip) or via bower. To get using [Bower](http://bower.io/) just run this command:
 
     $ bower install angular-drag-n-drop
 
