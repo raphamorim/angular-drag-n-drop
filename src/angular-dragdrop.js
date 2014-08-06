@@ -29,10 +29,6 @@ var app = angular.module("dragAndDrop", [])
                 var box = document.getElementById(this.id);
                 box.appendChild(element);
 
-                // Remove element from dragList
-                var index = scope.dragList.indexOf(element);
-                scope.dragList.splice(index, 1);
-
                 return false;
             },
             false
@@ -49,8 +45,7 @@ var app = angular.module("dragAndDrop", [])
 
 .directive('draggable', function() {
     return function(scope, element) {
-        var el = element[0],
-            dragList = scope.dragList;
+        var el = element[0];
 
         // Apply draggable property on element
         el.draggable = true;
@@ -70,15 +65,11 @@ var app = angular.module("dragAndDrop", [])
 
         // Event on drag end
         el.addEventListener('dragend', function(e) {
-
                 // When drag over, remove drag class
                 this.classList.remove('drag');
             },
             false
         );
-
-        // Add this element on dragList
-        dragList.push(el);
     }
 });
 
@@ -89,8 +80,8 @@ var app = angular.module("dragAndDrop", [])
 function dragAndDropController($scope) {
     /*
         Element list with allow drag
+           $scope.dragList = [];
     */
-    $scope.dragList = [];
 
     /*
         Element list with allow drop, to see dropped items on the element.
