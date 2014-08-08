@@ -17,7 +17,7 @@ var app = angular.module("dragAndDrop", [])
         // Add element to droppable list
         droppable.push(el);
 
-        // Apply prototype to list dropped items
+        // Start dropped items property
         el.droppedItems = [];
 
         // Event to drop action on droppable element
@@ -29,6 +29,8 @@ var app = angular.module("dragAndDrop", [])
                 var box = document.getElementById(this.id);
                 box.appendChild(element);
 
+		el.droppedItems = el.childNodes;
+		
                 return false;
             },
             false
@@ -46,16 +48,19 @@ var app = angular.module("dragAndDrop", [])
 .directive('draggable', function() {
     return function(scope, element) {
         var el = element[0];
+	
+	// Apply cursor style to "move" in each draggable element
+	el.style.cursor = 'move';
 
         // Apply draggable property on element
         el.draggable = true;
 
         // If element don't have any id, create random id
         if (!el.id) el.id = Math.floor((Math.random() * 100000) + 1);
-
+	
         // Event on drag start
         el.addEventListener('dragstart', function(e) {
-                e.dataTransfer.setData("Text", e.target.id);
+                e.dataTransfer.setData('Text', e.target.id);
 
                 // When element is on drag, add drag class
                 this.classList.add('drag');
