@@ -89,6 +89,11 @@ h3 {
 	position: relative;
 	border-bottom: 3px solid rgba(0,0,0,.5);
 	cursor: move;
+	transition: all 10ms ease;
+}
+
+.box .item.drag {
+	visibility: hidden;
 }
 
 .box .item>p {
@@ -97,10 +102,10 @@ h3 {
 	margin: 55px 0px;
 }
 
-.box .item:nth-child(n) {
+.box .item.green {
 	background: #F1664F;
 }
-.box .item:nth-child(3n+1), .box .item:nth-child(3) {
+.box .item.red{
 	background: #85CCC2;
 }
 .box:nth-child(2)>.item:nth-child(n) {
@@ -119,6 +124,10 @@ h3 {
 .small:nth-child(3) {
 	width: 52%;
 }
+
+/*.box.over {
+	background: rgba(0,0,0,.05);
+}*/
 
 .download p, .guide p {
 	font-size: 20px;
