@@ -18,33 +18,45 @@ var app = angular.module("dragAndDrop", [])
         droppable.push(el);
 
         // Start dropped items property
-        el.droppedItems = [];
+        el.items = [];
 
         // Event to drop action on droppable element
         el.addEventListener('drop', function(e) {
                 e.preventDefault();
 
-                var data = e.dataTransfer.getData("Text");
-                var element = document.getElementById(data);
-                var box = document.getElementById(this.id);
+                var data = e.dataTransfer.getData("Text"),
+                    element = document.getElementById(data),
+                    box = document.getElementById(this.id);
+
                 box.appendChild(element);
 
-                var items = el.childNodes;
+                droppable.forEach(function(box) {
+                    var dragItem = box.childNodes;
 
-                Object.keys(items).forEach(function(key) {
-                    if (items[key].draggable === true)
-                        el.droppedItems.push(items[key]);
+		    box.items = [];
+
+                    Object.keys(dragItem).forEach(function(key) {
+                        if (dragItem[key].draggable === true) 
+                            box.items.push(dragItem[key]);
+                    });
                 });
-            },
-            false
-        );
-
-		el.droppedItems = el.childNodes;
 
                 return false;
             },
             false
         );
+	
+	el.addEventListener('dragenter', function(e) {
+		this.classList.add('over');
+	    },
+	    false
+	);
+
+	el.addEventListener('dragleave', function(e) {
+		this.classList.remove('over');
+	    },
+	    false
+	);
 
         // Event to drag over action on droppable element
         el.addEventListener('dragover', function(e) {
@@ -58,16 +70,16 @@ var app = angular.module("dragAndDrop", [])
 .directive('draggable', function() {
     return function(scope, element) {
         var el = element[0];
-	
-	// Apply cursor style to "move" in each draggable element
-	el.style.cursor = 'move';
+
+        // Apply cursor style to "move" in each draggable element
+        el.style.cursor = 'move';
 
         // Apply draggable property on element
         el.draggable = true;
 
         // If element don't have any id, create random id
         if (!el.id) el.id = Math.floor((Math.random() * 100000) + 1);
-	
+
         // Event on drag start
         el.addEventListener('dragstart', function(e) {
                 e.dataTransfer.setData('Text', e.target.id);
