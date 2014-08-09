@@ -29,8 +29,18 @@ var app = angular.module("dragAndDrop", [])
                 var box = document.getElementById(this.id);
                 box.appendChild(element);
 
+                var items = el.childNodes;
+
+                Object.keys(items).forEach(function(key) {
+                    if (items[key].draggable === true)
+                        el.droppedItems.push(items[key]);
+                });
+            },
+            false
+        );
+
 		el.droppedItems = el.childNodes;
-		
+
                 return false;
             },
             false
