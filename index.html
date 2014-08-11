@@ -64,7 +64,7 @@
 				<div class="box small">
 					<div class="code">
 						<span class="var">$</span> <span class="attr">bower install angular-drag-n-drop</span>
-          			</div>
+          				</div>
 				</div>
 			</div>
 			<div class="guide">
@@ -89,6 +89,27 @@
 
 
 				<p>For allow drop in any element, use <strong>droppable</strong> directive:</p>
+				<div class="code">
+					&lt;<span class="tag">div</span> <span class="attr">droppable</span> <span class="attr">class</span>=<span class="property">"box"</span>&gt;&lt;/<span class="tag">div</span>&gt;<br>
+				</div>
+
+				<h1 id="behavior">Element Behavior</h1>
+				<p>On dragstart event, it's added "over" class</p>
+				<div class="code">
+					&lt;<span class="tag">p</span> <span class="attr drag">draggable class</span>=<span class="property">"item drag"</span>&gt;Indiana Jones&lt;/<span class="tag">p</span>&gt;<br>
+				</div>
+
+				<p>On dragover event, it's removed "over" class</p>
+				<div class="code">
+					&lt;<span class="tag">p</span> <span class="attr drag">draggable class</span>=<span class="property">"item"</span>&gt;Indiana Jones&lt;/<span class="tag">p</span>&gt;<br>
+				</div>
+
+				<p>On dragenter event, it's added "over" class</p>
+				<div class="code">
+					&lt;<span class="tag">div</span> <span class="attr">droppable</span> <span class="attr">class</span>=<span class="property">"box over"</span>&gt;&lt;/<span class="tag">div</span>&gt;<br>
+				</div>
+				
+				<p>On dragleave event, it's removed "over" class</p>
 				<div class="code">
 					&lt;<span class="tag">div</span> <span class="attr">droppable</span> <span class="attr">class</span>=<span class="property">"box"</span>&gt;&lt;/<span class="tag">div</span>&gt;<br>
 				</div>
