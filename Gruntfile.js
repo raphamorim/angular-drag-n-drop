@@ -11,14 +11,23 @@ module.exports = function(grunt) {
             main: {
                 files: {
                     "angular-dragdrop.min.js": [
-                        "src/angular-dragdrop.js"
+                        "src/directives.js",
+                        "src/controller.js"
                     ]
                 }
+            }
+        },
+
+        concat: {
+            dist: {
+                src: ["src/directives.js", "src/controller.js"],
+                dest: "angular-dragdrop.js"
             }
         }
     });
 
     grunt.loadNpmTasks("grunt-contrib-uglify");
+    grunt.loadNpmTasks("grunt-contrib-concat");
 
-    grunt.registerTask("default", ["uglify"]);
+    grunt.registerTask("default", ["uglify", "concat"]);
 };
